@@ -1,13 +1,11 @@
-#Mike Mayr (MMayr15), Chalie Crow (LevenBravo)
-#Team 21
-#https://github.com/CSE220Team21/Lab5
-#MakeFile
+#=============================================================
+#	Mike Mayr (MMayr15), Chalie Crow (LevenBravo)
+#	Team 21
+#	https://github.com/CSE220Team21/Lab5
+#	MakeFile
+#=============================================================
 
-
-#============================================================================
-#Edit to make it work with Lab 5
-#============================================================================
-all: Lab4 clean
+all: Lab5 clean
 
 Lab5: main.o Print.o Scanner.o Token.o bTree.o LinkedList.o
 	g++ main.o Print.o Scanner.o Token.o bTree.o LinkedList.o -o Lab5
