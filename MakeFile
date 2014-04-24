@@ -5,9 +5,9 @@
 #	MakeFile
 #=============================================================
 
-all: Lab5 clean
+all: CrossReference clean
 
-Lab5: main.o Print.o Scanner.o Token.o bTree.o LinkedList.o
+CrossReference: main.o Print.o Scanner.o Token.o bTree.o LinkedList.o
 	g++ main.o Print.o Scanner.o Token.o bTree.o LinkedList.o -o Lab5
 
 
