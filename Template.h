@@ -1,8 +1,10 @@
-#Mike Mayr (MMayr15), Chalie Crow (LevenBravo)
-#Team 21
-#https://github.com/CSE220Team21/Lab5
-#MTemplate.h
-#Similar to example done in class
+#=============================================================
+#   Mike Mayr (MMayr15), Chalie Crow (LevenBravo)
+#   Team 21
+#   https://github.com/CSE220Team21/Lab5
+#   Template.h
+#   Similar to example done in class
+#=============================================================
 
 template <typename T>
 class Literal : public Token{
