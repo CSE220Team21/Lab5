@@ -1,0 +1,35 @@
+#Mike Mayr (MMayr15), Chalie Crow (LevenBravo)
+#Team 21
+#https://github.com/CSE220Team21/Lab5
+#MakeFile
+
+
+#============================================================================
+#Edit to make it work with Lab 5
+#============================================================================
+all: Lab4 clean
+
+Lab4: main.o Print.o Scanner.o Token.o bTree.o LinkedList.o
+	g++ main.o Print.o Scanner.o Token.o bTree.o LinkedList.o -o Lab4
+
+
+main.o: main.cpp
+	g++ -c main.cpp
+
+Print.o: Print.cpp
+	g++ -c Print.cpp
+
+Scanner.o: Scanner.cpp
+	g++ -c Scanner.cpp
+
+Token.o: Token.cpp
+	g++ -c Token.cpp
+
+bTree.o: bTree.cpp
+	g++ -c bTree.cpp
+
+LinkedList.o: LinkedList.cpp
+	g++ -c LinkedList.cpp
+
+clean:
+	rm -rf *.o
