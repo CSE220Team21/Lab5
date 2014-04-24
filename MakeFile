@@ -10,7 +10,6 @@ all: CrossReference clean
 CrossReference: main.o Print.o Scanner.o Token.o bTree.o LinkedList.o
 	g++ main.o Print.o Scanner.o Token.o bTree.o LinkedList.o -o CrossReference
 
-
 main.o: main.cpp
 	g++ -c main.cpp
 
