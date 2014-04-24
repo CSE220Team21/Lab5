@@ -9,8 +9,8 @@
 #============================================================================
 all: Lab4 clean
 
-Lab4: main.o Print.o Scanner.o Token.o bTree.o LinkedList.o
-	g++ main.o Print.o Scanner.o Token.o bTree.o LinkedList.o -o Lab4
+Lab5: main.o Print.o Scanner.o Token.o bTree.o LinkedList.o
+	g++ main.o Print.o Scanner.o Token.o bTree.o LinkedList.o -o Lab5
 
 
 main.o: main.cpp
@@ -25,11 +25,11 @@ Scanner.o: Scanner.cpp
 Token.o: Token.cpp
 	g++ -c Token.cpp
 
-bTree.o: bTree.cpp
-	g++ -c bTree.cpp
+IdentifierBinaryTree.o: IdentifierBinaryTree.cpp
+	g++ -c IdentifierBinaryTree.cpp
 
-LinkedList.o: LinkedList.cpp
-	g++ -c LinkedList.cpp
+LineNumberList.o: LineNumberList.cpp
+	g++ -c LineNumberList.cpp
 
 clean:
 	rm -rf *.o
