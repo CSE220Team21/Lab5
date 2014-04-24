@@ -8,7 +8,7 @@
 all: CrossReference clean
 
 CrossReference: main.o Print.o Scanner.o Token.o bTree.o LinkedList.o
-	g++ main.o Print.o Scanner.o Token.o bTree.o LinkedList.o -o Lab5
+	g++ main.o Print.o Scanner.o Token.o bTree.o LinkedList.o -o CrossReference
 
 
 main.o: main.cpp
