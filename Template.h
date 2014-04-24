@@ -19,10 +19,17 @@ class Literal : public Token{
     };
 class String : public Literal{
   public:
-    String() : Literal<double>(0.0){
+    String() : Literal<string>(""){
       //Anything go in here?
     }
     void print(){
       //Anything go in here?
     }
+    Real() : Literal<double>(0.0){
+      //Anything go in here?
+    }
+    Integer() : Literal<int>(0){
+      //Anything go in here?
+    }
+    
 }
