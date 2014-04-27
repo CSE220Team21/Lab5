@@ -11,6 +11,11 @@
 #include "common.h"
 #include "Token.h"
 #include "Print.h"
+#include "Identifier.h"
+#include "EpicQuotes.h"
+#include "Real.h"
+#include "Number.h"
+
 
 #define CHAR_TABLE_SIZE 256
 
