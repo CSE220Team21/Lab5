@@ -67,6 +67,14 @@ void Print::printToken(Token *token)
     char line[MAX_SOURCE_LINE_LENGTH + 32];
     const char *symbol_string = SYMBOL_STRINGS[token->getCode()];
     
+    if (++lineCount > MAX_LINES_PER_PAGE)
+    {
+        printPageHeader();
+ 		lineCount = 1;
+ 	}
+ 	token->print();
+ 
+/* 
     switch (token->getCode())
     {
         case NUMBER:
@@ -87,12 +95,14 @@ void Print::printToken(Token *token)
             break;
     }
     printLine(line);
+*/
+
 }
 int Print::getLineCount()
 {
     return this->lineCount;
 }
-void Print::printTreeRecursive(Token *identifier)
+void Print::printTreeRecursive(Identifier *identifier)
 {
     char line[MAX_SOURCE_LINE_LENGTH + 32];
     
@@ -115,7 +125,7 @@ void Print::printTreeRecursive(Token *identifier)
         printTreeRecursive(identifier->getRightChild());
     }
 }
-void Print::printTree(Token *identifier)
+void Print::printTree(Identifier *identifier)
 {
     cout << "\n Cross Reference Information\n";
     cout << " Identifier \t\tLine Numbers\n";
