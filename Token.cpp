@@ -9,14 +9,15 @@
 
 Token::Token()
 {
-    //What code do I need here to initialize everything.
+/*    //What code do I need here to initialize everything.
     setLeftChild(NULL);
     setRightChild(NULL);
     list = NULL;
+*/
 }
 Token::~Token()
 {
-    //What code do I need here to free memory
+/*    //What code do I need here to free memory
     LineNumberList *root = getLineNumberList();
     LineNumberList *tmp = root;
     
@@ -30,6 +31,7 @@ Token::~Token()
     {
         free(this->literal.stringLiteral);
     }
+*/
 }
 void Token::setCode(TokenCode newCode)
 {
@@ -39,6 +41,7 @@ TokenCode Token::getCode()
 {
     return this->code;
 }
+/*
 void Token::setType(LiteralType newType)
 {
     this->type = newType;
@@ -72,6 +75,7 @@ string Token::getStringLiteral()
 {
     return string(this->literal.stringLiteral);
 }
+*/
 void Token::setTokenString(string s)
 {
     this->tokenString = s;
@@ -80,6 +84,15 @@ string Token::getTokenString()
 {
     return this->tokenString;
 }
+void Token::print()
+{
+    char line[MAX_SOURCE_LINE_LENGTH + 32];
+	const char *symbol_string = SYMBOL_STRINGS[this->getCode()];
+
+	sprintf(line, "    >> %-16s %s\n", symbol_string, this->getTokenString().c_str());
+	printf("%s", line);
+
+/*
 //What methods am I missing to implement a binary tree.
 void Token::setLeftChild(Token *tok)
 {
