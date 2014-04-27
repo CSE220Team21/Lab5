@@ -22,6 +22,8 @@ class Token
 {
 private:
     TokenCode code;
+    string tokenString;
+/*    
     LiteralType type;
     union
     {
@@ -35,12 +37,18 @@ private:
     Token *leftChild;
     Token *rightChild;
     LineNumberList *list;
-    
+*/    
 public:
     Token();
     ~Token();
     void setCode(TokenCode newCode);
     TokenCode getCode();
+    
+    void setTokenString(string s);
+    string getTokenString();
+    
+    virtual void print();
+/*    
     void setType(LiteralType newType);
     LiteralType getType();
     void setLiteral(int newInteger);
@@ -49,14 +57,13 @@ public:
     float getRealLiteral();
     void setLiteral(string newString);
     string getStringLiteral();
-    void setTokenString(string s);
-    string getTokenString();
     void setLeftChild(Token *tok);
     Token *getLeftChild();
     void setRightChild(Token *tok);
     Token *getRightChild();
     void addToLineNumberList(LineNumberList *listItem);
     LineNumberList *getLineNumberList();
+*/
 };
 
 #endif /* defined(__Lab4__Token__) */
