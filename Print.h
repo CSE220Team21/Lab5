@@ -11,6 +11,7 @@
 #include <iostream>
 #include "common.h"
 #include "Token.h"
+#include "Identifier.h"
 
 using namespace std;
 
@@ -31,8 +32,8 @@ public:
     void printLine(char line[]);
     void printToken(Token *token);
     int getLineCount();
-    void printTree(Token *identifier);
-    void printTreeRecursive(Token *identifier);
+    void printTree(Identifier *identifier);
+    void printTreeRecursive(Identifier *identifier);
 };
 
 #endif /* defined(__Lab4__Print__) */
