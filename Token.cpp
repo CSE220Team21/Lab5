@@ -90,7 +90,7 @@ void Token::print()
 	const char *symbol_string = SYMBOL_STRINGS[this->getCode()];
 
 	sprintf(line, "    >> %-16s %s\n", symbol_string, this->getTokenString().c_str());
-	printf("%s", line);
+	printf("%s", line);  //s stored as c_str and printed
 }
 /*
 //What methods am I missing to implement a binary tree.
