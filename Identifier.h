@@ -22,7 +22,7 @@ public:
     Identifier *getRightChild();
     void addToLineNumberList(LineNumberList *listItem);
     LineNumberList *getLineNumberList();
-    void print();
+    void print();  //print fuction for class
 
 private:
     //What variables and methods am I missing to implement a binary tree.
