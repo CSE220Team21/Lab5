@@ -9,7 +9,7 @@
 
 Token::Token()
 {
-/*    //What code do I need here to initialize everything.
+/*
     setLeftChild(NULL);
     setRightChild(NULL);
     list = NULL;
@@ -17,7 +17,7 @@ Token::Token()
 }
 Token::~Token()
 {
-/*    //What code do I need here to free memory
+/*
     LineNumberList *root = getLineNumberList();
     LineNumberList *tmp = root;
     
