@@ -264,7 +264,7 @@ Token* Scanner::getNumber(char *str, char *token_ptr)
     *token_ptr = '\0';
     if (int_type)
     {
-    	Token* tok = new Integer();
+    	Token* tok = new Number();
     	tok->setTokenString(str);
     	tok->setCode(NUMBER);
     	return tok;
