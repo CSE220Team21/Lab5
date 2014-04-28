@@ -106,7 +106,7 @@ Token* Scanner::getToken()
             new_token = getNumber(token_string, token_ptr);
             break;
         case QUOTE:
-        	new_token = new Quotes();
+        	new_token = new EpicQuotes();
             getString(token_string, token_ptr, new_token);
             break;
         case EOF_CODE:
