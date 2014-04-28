@@ -7,11 +7,20 @@
 
 all: CrossReference clean
 
-CrossReference: main.o Print.o Scanner.o Token.o bTree.o LinkedList.o
-	g++ main.o Print.o Scanner.o Token.o bTree.o LinkedList.o -o CrossReference
+CrossReference: main.o Identifier.o IdentifierBinaryTree.o LineNumberList.o Print.o Scanner.o Token.o
+		g++ main.o Identifier.o IdentifierBinaryTree.o LineNumberList.o Print.o Scanner.o Token.o -o CrossReference
 
 main.o: main.cpp
 	g++ -c main.cpp
+
+Identifier.o: Identifier.cpp
+	g++ -c Identifier.cpp
+
+IdentifierBinaryTree.o: IdentifierBinaryTree.cpp
+	g++ -c IdentifierBinaryTree.cpp
+
+LineNumberList.o: LineNumberList.cpp
+	g++ -c LineNumberList.cpp
 
 Print.o: Print.cpp
 	g++ -c Print.cpp
@@ -21,12 +30,6 @@ Scanner.o: Scanner.cpp
 
 Token.o: Token.cpp
 	g++ -c Token.cpp
-
-IdentifierBinaryTree.o: IdentifierBinaryTree.cpp
-	g++ -c IdentifierBinaryTree.cpp
-
-LineNumberList.o: LineNumberList.cpp
-	g++ -c LineNumberList.cpp
 
 clean:
 	rm -rf *.o
