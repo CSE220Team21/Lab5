@@ -8,19 +8,6 @@
 #include "Print.h"
 #include "Token.h"
 
-const char* const SYMBOL_STRINGS[] =
-{
-    "<no token>", "<IDENTIFIER>", "<NUMBER>", "<STRING>",
-    "^","*","(",")","-","+","=","[","]",":",";",
-    "<",">",",",".","/",":=","<=",">=","<>","..",
-    "<END OF FILE>", "<ERROR>",
-    "AND","ARRAY","BEGIN","CASE","CONST","DIV","DO","DOWNTO",
-    "ELSE","END","FILE","FOR","FUNCTION","GOTO","IF","IN",
-    "LABEL","MOD","NIL","NOT","OF","OR","PACKED","PROCEDURE",
-    "PROGRAM","RECORD","REPEAT","SET","THEN","TO","TYPE","UNTIL",
-    "VAR","WHILE","WITH",
-};
-
 Print::Print(char source_name[], char date[])
 {
     this->sourceFileName = string(source_name);
