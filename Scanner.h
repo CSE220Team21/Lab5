@@ -13,7 +13,7 @@
 #include "Print.h"
 #include "EpicQuotes.h"
 #include "Real.h"
-#include "Integer.h"
+#include "Number.h"
 #include "Identifier.h"
 
 #define CHAR_TABLE_SIZE 256
