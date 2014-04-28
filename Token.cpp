@@ -91,7 +91,7 @@ void Token::print()
 
 	sprintf(line, "    >> %-16s %s\n", symbol_string, this->getTokenString().c_str());
 	printf("%s", line);
-
+}
 /*
 //What methods am I missing to implement a binary tree.
 void Token::setLeftChild(Token *tok)
