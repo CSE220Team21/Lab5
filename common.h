@@ -52,14 +52,14 @@ typedef enum
     VAR, WHILE, WITH,
 }
 TokenCode;
-
-/*****************************
+/*
+*****************************
  Literal Type
- *****************************/
+*****************************
 typedef enum
 {
     INTEGER_LIT, REAL_LIT, STRING_LIT, NO_TYPE,
 }
 LiteralType;
-
+*/
 #endif
