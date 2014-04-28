@@ -32,7 +32,7 @@ int main(int argc, const char * argv[])
         print.printToken(token);
         if (token->getCode() == IDENTIFIER)
         {
-            tree.addIdentifier(token, scanner.getLineNumber());
+            tree.addIdentifier((Identifier*)token, scanner.getLineNumber());
         }
         else if (token->getCode() != PERIOD && token->getCode() != END_OF_FILE)
         {
