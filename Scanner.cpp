@@ -84,7 +84,7 @@ Token* Scanner::getToken()
     char ch = '\0'; //This can be the current character you are examining during scanning.
     char token_string[MAX_TOKEN_STRING_LENGTH] = {'\0'}; //Store your token here as you build it.
     char *token_ptr = token_string; //write some code to point this to the beginning of token_string
-    Token *new_token = new Token();
+    Token *new_token;
     
 /*    new_token->setType(NO_TYPE);*/
     //1.  Skip past all of the blanks
@@ -99,18 +99,22 @@ Token* Scanner::getToken()
     switch (char_table[ch])
     {//3.  Call the appropriate function to deal with the cases in 2.
         case LETTER:
+            new_token = new Identifier();
             getWord(token_string, token_ptr, new_token);
             break;
         case DIGIT:
-            getNumber(token_string, token_ptr, new_token);
+            new_token = getNumber(token_string, token_ptr);
             break;
         case QUOTE:
+            new_token = new EpicQuotes();
             getString(token_string, token_ptr, new_token);
             break;
         case EOF_CODE:
+            new_token = new Token();
             new_token->setCode(END_OF_FILE);
             break;
         default:
+            new_token = new Token();
             getSpecial(token_string, token_ptr, new_token);
             break;
     }
@@ -202,7 +206,7 @@ void Scanner::getWord(char *str, char *token_ptr, Token *tok)
     }
     tok->setTokenString(string(str));
 }
-void Scanner::getNumber(char *str, char *token_ptr, Token *tok)
+Token* Scanner::getNumber(char *str, char *token_ptr)
 {
     /*
      Write some code to Extract the number and convert it to a literal number.
