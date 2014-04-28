@@ -16,7 +16,7 @@ public:
 	Identifier();
 	~Identifier();
 
-    void setLeftChild(Identifier *tok); // OUT
+    void setLeftChild(Identifier *tok);
     Identifier *getLeftChild();
     void setRightChild(Identifier *tok);
     Identifier *getRightChild();
