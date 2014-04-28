@@ -86,7 +86,7 @@ Token* Scanner::getToken()
     char *token_ptr = token_string; //write some code to point this to the beginning of token_string
     Token *new_token;
     
-/*    new_token->setType(NO_TYPE);*/
+/*    new_token->setType(NO_TYPE);          */
     //1.  Skip past all of the blanks
     if (line_ptr == NULL)
     {
@@ -99,22 +99,22 @@ Token* Scanner::getToken()
     switch (char_table[ch])
     {//3.  Call the appropriate function to deal with the cases in 2.
         case LETTER:
-            new_token = new Identifier();
+        	new_token = new Identifier();
             getWord(token_string, token_ptr, new_token);
             break;
         case DIGIT:
             new_token = getNumber(token_string, token_ptr);
             break;
         case QUOTE:
-            new_token = new EpicQuotes();
+        	new_token = new Quotes();
             getString(token_string, token_ptr, new_token);
             break;
         case EOF_CODE:
-            new_token = new Token();
+        	new_token = new Token();
             new_token->setCode(END_OF_FILE);
             break;
         default:
-            new_token = new Token();
+        	new_token = new Token();
             getSpecial(token_string, token_ptr, new_token);
             break;
     }
@@ -262,22 +262,30 @@ Token* Scanner::getNumber(char *str, char *token_ptr)
         while (char_table[ch] == DIGIT);
     }
     *token_ptr = '\0';
-    
     if (int_type)
     {
-/*        tok->setType(INTEGER_LIT);
+    	Token* tok = new Integer();
+    	tok->setTokenString(str);
+    	tok->setCode(NUMBER);
+    	return tok;
+/*
+        tok->setType(INTEGER_LIT);
         tok->setLiteral((int)atoi(str));
 */
-        Token* tok = new Integer();
-        tok->setTokenString(str);
-        tok->setCode(NUMBER);
-        return tok;
     }
     else
     {
+
+    	Token* tok = new Real();
+    	tok->setTokenString(str);
+    	tok->setCode(NUMBER);
+    	return tok;
+/*
         tok->setType(REAL_LIT);
         tok->setLiteral((float)atof(str));
+*/
     }
+
 }
 void Scanner::getString(char *str, char *token_ptr, Token *tok)
 {
@@ -295,9 +303,9 @@ void Scanner::getString(char *str, char *token_ptr, Token *tok)
     *token_ptr = '\0';
     tok->setCode(STRING);
     string test(str);
-/*    
+    tok->setTokenString(test);
+/*  tok->setType(STRING_LIT);
     tok->setLiteral(test);
-    tok->setType(STRING_LIT);
 */
 }
 void Scanner::getSpecial(char *str, char *token_ptr, Token *tok)
