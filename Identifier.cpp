@@ -67,4 +67,5 @@ void Identifier::print(){
 	const char *symbol_string = SYMBOL_STRINGS[this->getCode()];
 	sprintf(line, "    >> %-16s %-s\n", symbol_string, this->getTokenString().c_str());
 	printf("%s", line);
+	//stortes string in c_string and prints string
 }
