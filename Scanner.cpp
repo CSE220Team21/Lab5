@@ -86,7 +86,7 @@ Token* Scanner::getToken()
     char *token_ptr = token_string; //write some code to point this to the beginning of token_string
     Token *new_token = new Token();
     
-    new_token->setType(NO_TYPE);
+/*    new_token->setType(NO_TYPE);*/
     //1.  Skip past all of the blanks
     if (line_ptr == NULL)
     {
@@ -258,11 +258,16 @@ void Scanner::getNumber(char *str, char *token_ptr, Token *tok)
         while (char_table[ch] == DIGIT);
     }
     *token_ptr = '\0';
-    tok->setCode(NUMBER);
+    
     if (int_type)
     {
-        tok->setType(INTEGER_LIT);
+/*        tok->setType(INTEGER_LIT);
         tok->setLiteral((int)atoi(str));
+*/
+        Token* tok = new Integer();
+        tok->setTokenString(str);
+        tok->setCode(NUMBER);
+        return tok;
     }
     else
     {
@@ -285,9 +290,11 @@ void Scanner::getString(char *str, char *token_ptr, Token *tok)
     *token_ptr++ = *line_ptr++;
     *token_ptr = '\0';
     tok->setCode(STRING);
-    tok->setType(STRING_LIT);
     string test(str);
+/*    
     tok->setLiteral(test);
+    tok->setType(STRING_LIT);
+*/
 }
 void Scanner::getSpecial(char *str, char *token_ptr, Token *tok)
 {
