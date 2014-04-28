@@ -27,7 +27,7 @@ class Real : public Token
 			const char *symbol_string = SYMBOL_STRINGS[this->getCode()];
 
 			sprintf(line, "    >> %-16s %s (real)\n", symbol_string, this->getTokenString().c_str());
-			printf("%s", line);
+			printf("%s", line); //stores s as c_str and prints
 		}
 };
 #endif
