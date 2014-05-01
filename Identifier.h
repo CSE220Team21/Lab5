@@ -15,7 +15,7 @@ class Identifier : public Token
 public:
 	Identifier();
 	~Identifier();
-
+    
     void setLeftChild(Identifier *tok);
     Identifier *getLeftChild();
     void setRightChild(Identifier *tok);
@@ -23,7 +23,7 @@ public:
     void addToLineNumberList(LineNumberList *listItem);
     LineNumberList *getLineNumberList();
     void print();  //print fuction for class
-
+    
 private:
     //What variables and methods am I missing to implement a binary tree.
     Identifier *leftChild;
