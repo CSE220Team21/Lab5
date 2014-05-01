@@ -5,6 +5,7 @@
 /*	Identifier.cpp						*/
 /*==============================================================*/
 #include "Identifier.h"
+#include "Token.h"
 
 Identifier::Identifier(): Token(){
 	this->setCode(IDENTIFIER);
@@ -16,7 +17,7 @@ Identifier::Identifier(): Token(){
 Identifier::~Identifier(){
 	LineNumberList *root = getLineNumberList();
 	LineNumberList *tmp = root;
-	
+    
 	while (root != NULL)
 	{
 		tmp = tmp->getNextLineNumber();
@@ -43,7 +44,7 @@ Identifier *Identifier::getRightChild(){
 
 void Identifier::addToLineNumberList(LineNumberList *listItem){
 	LineNumberList *tmp = getLineNumberList();
-	
+    
 	if (tmp == NULL)
 	{
 		list = listItem;
@@ -54,7 +55,7 @@ void Identifier::addToLineNumberList(LineNumberList *listItem){
 		{
 			tmp = tmp->getNextLineNumber();
 		}
-	tmp->setNextLineNumber(listItem);
+        tmp->setNextLineNumber(listItem);
 	}
 }
 
@@ -64,8 +65,8 @@ LineNumberList *Identifier::getLineNumberList(){
 
 void Identifier::print(){
 	char line[MAX_SOURCE_LINE_LENGTH + 32];
-	const char *symbol_string = SYMBOL_STRINGS[this->getCode()];
+	//const char *symbol_string = SYMBOL_STRINGS[this->getCode()];
 	sprintf(line, "    >> %-16s %-s\n", symbol_string, this->getTokenString().c_str());
 	printf("%s", line);
 	//stortes string in c_string and prints string
-}
+};
